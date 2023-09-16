@@ -3,6 +3,7 @@ kind: Component
 metadata:
   name: ${{ values.name | dump }}
 spec:
-  type: service
-  owner: user:guest
+  type: service_deployment
+  owner: user:alex
   lifecycle: experimental
+

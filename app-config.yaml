@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: GlooDev
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Solo.io
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -77,17 +77,29 @@ catalog:
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
-      target: ../../examples/entities.yaml
+      target: manifests/entities.yaml
 
     # Local example template
     - type: file
-      target: ../../examples/template/template.yaml
+      target: manifests/template/cluster/template.yaml
       rules:
         - allow: [Template]
+    - type: file
+      target: manifests/template/workspace/template.yaml
+      rules:
+        - allow: [Template]      
+    - type: file
+      target: manifests/template/service-deployment/template.yaml
+      rules:
+        - allow: [Template]    
+    - type: file
+      target: manifests/template/service/template.yaml
+      rules:
+        - allow: [Template]                        
 
     # Local example organizational data
     - type: file
-      target: ../../examples/org.yaml
+      target: manifests/org.yaml
       rules:
         - allow: [User, Group]
 
